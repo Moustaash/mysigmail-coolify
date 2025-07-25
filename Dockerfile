@@ -13,6 +13,7 @@ COPY . .
 RUN npm install
 
 # Builder l'app (génère /app/build)
+ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN npm run build
 
 # Étape 2 : image Nginx minimale pour servir le build
